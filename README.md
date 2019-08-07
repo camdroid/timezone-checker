@@ -1,0 +1,2 @@
+I keep getting frustrated when I schedule an event while traveling, only to get back home, show up for the event, and find out I'm an hour off. This script looks through upcoming Google Calendar events, identifies which time zone they're in (based on state, not city-level accuracy), and checks whether the event time zone matches that. 
+If the time zone assigned to the event is either missing or doesn't match up with one of the time zones associated with the state, the script prints out a warning message with the event title.
