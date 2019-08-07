@@ -47,7 +47,6 @@ def main():
     events = events_result.get('items', [])
 
     def get_time_zones_for_event(event):
-        # pdb.set_trace()
         time_zones = []
         if 'location' not in event:
             print('No location found for event')
@@ -67,7 +66,7 @@ def main():
         name = event.get('summary')
         if not name:
             return 'No title found'
-        return name.split('\n')[0] # [:15]
+        return name.split('\n')[0]
 
     if not events:
         print('No upcoming events found.')
@@ -76,7 +75,6 @@ def main():
         print('Looking at event: ', event_name(event))
         time_zones = get_time_zones_for_event(event)
         if event['start'].get('timeZone') is None:
-            # pass
             print('This event has no time zone')
         elif event['start'].get('timeZone') in time_zones:
             print('Time zone matches location!')
